@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h1>Calculator</h1>
+    </div>
+    <div class="row">
+        <label for="number1">Number 1</label>
+        <input type="text" id="number1" name="number1" style="width: 100px;">
+    </div>
+    <div>
+        <label for="number2">Number 2</label>
+        <input type="text" id="number2" name="number2" style="width: 100px;">
+    </div>
+    <div>
+        <button id="add">Add</button>
+        <button id="subtract">Subtract</button>
+        <button id="multiply">Multiply</button>
+        <button id="divide">Divide</button>
+        <button id="percent">Percent</button>
+    </div>
+    <button id="clear">Clear</button>
+    <p></p>
+</div>
+<script>
+    const num1 = document.getElementById('number1');
+    const num2 = document.getElementById('number2');
+    const addButton = document.getElementById('add');
+    const subtractButton = document.getElementById('subtract');
+    const multiplyButton = document.getElementById('multiply');
+    const divideButton = document.getElementById('divide');
+    const clearButton = document.getElementById('clear');
+    const ans = document.querySelector('p');
+    const percentButton = document.getElementById('percent');
+
+    addButton.addEventListener('click', function(e){
+        console.log('line 46');
+        let number1 = +num1.value;
+        let number2 = +num2.value;
+        let result = (number1 + number2);
+        ans.classList.remove('hidden');
+        const add = document.createElement('p');
+        add.innerHTML = `${number1} + ${number2} = ${result}`;
+        ans.insertAdjacentElement('beforeend' , add);
+        number1.value = "";
+        number2.value = "";
+    });
+    subtractButton.addEventListener('click', function(e){
+        console.log('line 46');
+        let number1 = +num1.value;
+        let number2 = +num2.value;
+        let result = (number1 - number2);
+        ans.classList.remove('hidden');
+        const add = document.createElement('p');
+        add.innerHTML = `${number1} - ${number2} = ${result}`;
+        ans.insertAdjacentElement('beforeend' , add);
+        number1.value = "";
+        number2.value = "";
+    });
+    multiplyButton.addEventListener('click', function(e){
+        console.log('line 46');
+        let number1 = +num1.value;
+        let number2 = +num2.value;
+        let result = (number1 * number2);
+        ans.classList.remove('hidden');
+        const add = document.createElement('p');
+        add.innerHTML = `${number1} * ${number2} = ${result}`;
+        ans.insertAdjacentElement('beforeend' , add);
+        number1.value = "";
+        number2.value = "";
+    });
+    divideButton.addEventListener('click', function(e){
+        console.log('line 46');
+        let number1 = +num1.value;
+        let number2 = +num2.value;
+        let result = (number1 / number2);
+        ans.classList.remove('hidden');
+        const add = document.createElement('p');
+        add.innerHTML = `${number1} / ${number2} = ${result}`;
+        ans.insertAdjacentElement('beforeend' , add);
+        number1.value = "";
+        number2.value = "";
+    });
+    percentButton.addEventListener('click', function(e){
+        console.log('line 46');
+        let number1 = +num1.value;
+        let number2 = +num2.value;
+        let result = (number1 % number2);
+        ans.classList.remove('hidden');
+        const add = document.createElement('p');
+        add.innerHTML = `${number1} % ${number2} = ${result}`;
+        ans.insertAdjacentElement('beforeend' , add);
+        number1.value = "";
+        number2.value = "";
+    });
+
+    clearButton.addEventListener('click', function(e){
+        num1.value = " ";
+        num2.value = " ";
+        ans.textContent = "";
+        ans.classList.add("hidden");
+    })
+
+</script>
+</body>
+</html>
