@@ -3,9 +3,11 @@
 }
 body{
     background: #f3f4f6;
-    position: absolute;
 }
 
-label{
+label {
     display: block;
+}
+.container{
+    text-align:center;
 }
